@@ -1,5 +1,6 @@
 package Exc_10;
 
+import java.util.Iterator;
 import java.util.Set;
 import java.util.HashSet;
 
@@ -19,7 +20,7 @@ public class Exc_10
 
     public static void removeEven(Set<String> set)
     {
-        Set<String> removeSet = new HashSet<>();
+        /*Set<String> removeSet = new HashSet<>();
         for(String s: set)
         {
             if(s.length()%2==0)
@@ -28,5 +29,14 @@ public class Exc_10
             }
         }
         set.removeAll(removeSet);
+        */
+        Iterator<String> iterator = set.iterator();
+        while(iterator.hasNext())
+        {
+            if(iterator.next().length()%2==0)
+            {
+                iterator.remove();
+            }
+        }
     }
 }
